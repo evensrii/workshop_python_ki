@@ -1,3 +1,10 @@
+import os
+import requests
+import pandas as pd
+from dotenv import load_dotenv
+from io import BytesIO
+from datetime import datetime
+
 ## Function to fetch the GITHUB_TOKEN (environment variable) from the token.env file
 def get_github_token():
     """
@@ -36,7 +43,7 @@ GITHUB_TOKEN = get_github_token()
 
 def download_github_file(file_path):
     """Download a file from GitHub."""
-    url = f"https://api.github.com/repos/evensrii/Telemark/contents/{file_path}?ref=main"
+    url = f"https://api.github.com/repos/evensrii/workshop_python_ki/contents/{file_path}?ref=main"
     headers = {
         "Authorization": f"Bearer {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3.raw",
@@ -68,3 +75,8 @@ def download_github_file(file_path):
     else:
         print(f"Failed to download file: {file_path}, Status Code: {response.status_code}")
         return None
+
+# Example usage:
+file_path = "Python/Data/Udir/laerekontrakter.csv"
+df = download_github_file(file_path)
+print(df.head())
