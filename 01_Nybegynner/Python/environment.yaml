@@ -1,0 +1,33 @@
+# Opprette environment: conda env create --file environment.yaml
+# Oppdatere environment: conda update --file environment.yaml (og så deaktivere og aktivere environment)
+name: analyse
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.8      # Velge ønsket versjon av Python
+  - pip             # For å hente ulike pakker
+  - python-dotenv   # For å håndtere miljøvariabler
+  - ipykernel       # For å kjøre Python i Jupyter
+  - pygithub        # For å interagere med GitHub
+  - pandas          # For databehandling
+  - numpy           # For matematiske beregninger
+  - requests        # For henting av data fra APIer
+  - openpyxl        # For å lese Excel-filer
+  - matplotlib      # For å plotte data
+  - beautifulsoup4  # For å hente ("webscrape") data fra nettsider
+  - pypdf2          # For å lese PDF-filer
+  - xlrd            # For å lese Excel-filer
+  - aiohttp         # For asynkron henting av data
+  - pytz            # For håndtering av tidssoner
+  - pip:
+      - pyjstat   # For å behandle data fra SSB/Eurostat
+      - pyautogui # For å automatisere handlinger i Windows
+      - keyboard  # For å håndtere tastetrykk
+      - selenium # For å automatisere interaksjon med nettsteder
+      - dtale # For å lage interaktive tabeller for oppsummering
+variables:
+  PYTHONPATH: "C:\\Users\\eve1509\\OneDrive - Telemark fylkeskommune\\Github\\Telemark\\Python" ## Tilpass eget oppsett!
+  TEMP_FOLDER: "C:\\Users\\eve1509\\OneDrive - Telemark fylkeskommune\\Github\\Telemark\\Python\\Temp" ## Tilpass eget oppsett!
+  LOG_FOLDER: "C:\\Users\\eve1509\\OneDrive - Telemark fylkeskommune\\Github\\Telemark\\Python\\Log" ## Tilpass eget oppsett!
