@@ -8,8 +8,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 import io
 
 def safe_click(driver, element):
@@ -33,9 +31,9 @@ def download_udir_csv(download_dir, url):
         "download.directory_upgrade": True,
         "safebrowsing.enabled": True
     })
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(options=options)
     driver.get(url)
-    driver.set_window_size(1920, 1080)
+    driver.set_window_size(1200, 800)
     time.sleep(2)
     
     ########### Aksepter cookies
